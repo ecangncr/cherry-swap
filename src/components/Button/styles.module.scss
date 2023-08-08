@@ -1,0 +1,16 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    border-radius: 10px;
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 32px;
+    background: linear-gradient(360deg, $primary 0%, $primary-light 100%);
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

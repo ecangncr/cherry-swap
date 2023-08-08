@@ -1,0 +1,72 @@
+.header {
+    border: 1px solid #f3f4f6;
+
+    .headerWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    .navigationMenu {
+        display: flex;
+        column-gap: 36px;
+        align-items: center;
+        justify-content: center;
+
+        .link {
+            color: $gray-100;
+
+            font-size: 16px;
+
+            font-weight: 500;
+        }
+
+        .link:hover,
+        .activeLink {
+            color: $gray-300;
+            /* Add any other active link styles here */
+        }
+    }
+
+    .buttonWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 8px;
+
+        svg {
+            display: none;
+            cursor: pointer;
+        }
+    }
+
+    .mobileMenuActive {
+        display: flex !important;
+    }
+
+    @include media(medium) {
+        .navigationMenu {
+            display: none;
+            background-color: $white;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 10px;
+            row-gap: 12px;
+        }
+
+        .buttonWrapper svg {
+            display: block;
+        }
+    }
+}
