@@ -1,0 +1,40 @@
+.footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .tokenWrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 22px;
+        gap: 4px;
+
+        .tokenName {
+            color: $primary;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .tokenPrice {
+            color: $primary-light;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+    .chatButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        margin-bottom: 22px;
+        border-radius: 999px;
+        background-color: $white;
+        filter: drop-shadow(0px 4px 8px rgba(107, 114, 128, 0.08));
+        cursor: pointer;
+        transition: opacity 0.5s ease;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
