@@ -1,3 +1,9 @@
+import SwapCard from "@/components/SwapCard";
+import styles from "./styles.module.scss";
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div className={styles.swapArea}>
+      <SwapCard />
+    </div>
+  );
 }

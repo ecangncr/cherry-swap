@@ -24,12 +24,13 @@
             font-size: 16px;
 
             font-weight: 500;
+
+            transition: all ease 0.3s;
         }
 
         .link:hover,
         .activeLink {
             color: $gray-300;
-            /* Add any other active link styles here */
         }
     }
 
@@ -63,6 +64,7 @@
             justify-content: flex-start;
             padding-top: 10px;
             row-gap: 12px;
+            z-index: 999;
         }
 
         .buttonWrapper svg {

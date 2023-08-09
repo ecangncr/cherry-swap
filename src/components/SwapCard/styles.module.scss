@@ -1,0 +1,146 @@
+.swapCard {
+    width: 440px;
+    height: 451px;
+    background-color: $white;
+    border-radius: 28px;
+    box-shadow: 0px 4px 35px 0px rgba(82, 93, 107, 0.03);
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            color: $gray-300;
+
+            font-size: 20px;
+
+            font-weight: 500;
+        }
+    }
+
+    .information {
+        color: $gray-100;
+
+        font-size: 14px;
+
+        font-weight: 500;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        gap: 16px;
+
+        .swapContainer {
+            width: 100%;
+            height: 82px;
+            border-radius: 12px;
+            border: 0.6px solid #e5e7eb;
+            background: #f9fafb;
+            display: flex;
+            flex-direction: column;
+
+            padding: 8px 16px 16px 16px;
+
+            .address {
+                color: $gray-200;
+
+                font-size: 14px;
+
+                font-weight: 500;
+            }
+
+            .selectContainer {
+                margin-top: 12px;
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+
+                .tokenContainer {
+                    display: flex;
+                    flex-shrink: 0;
+                    align-items: center;
+                    gap: 8px;
+
+                    cursor: pointer;
+
+                    transition: opacity 0.3s ease;
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+
+                    .tokenName {
+                        color: $gray-400;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+
+                    .selectButton {
+                        width: 138px;
+                        height: 30px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 0px 12px;
+                        color: $white;
+                        font-size: 14px;
+                        font-weight: 500;
+                        path {
+                            fill: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .swapButton {
+        width: 100%;
+        height: 54px;
+        margin-top: 22px;
+        background: #fff1f2;
+        color: $primary;
+        font-size: 18px;
+    }
+
+    svg {
+        transition: opacity 0.2s ease;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+@include media(small) {
+    .swapCard {
+        width: 360px;
+
+        .selectButton {
+            width: 100px !important;
+            height: 30px !important;
+            font-size: 12px !important;
+
+            path {
+                display: none !important;
+            }
+        }
+        .swapButton {
+            font-size: 14px !important;
+        }
+
+        /*
+        .selectContainer input {
+            max-width: 60%;
+            //sorunun basit çözümü bu ama etkili yol değil
+        }
+        */
+    }
+}
