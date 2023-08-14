@@ -2,10 +2,10 @@
 import styles from "./styles.module.scss";
 import LogoIcon from "../Icons/Logo";
 import Link from "next/link";
-import Button from "../Button";
 import MoreMenuIcon from "../Icons/MoreMenu";
 import CloseIcon from "../Icons/Close";
 import { useState } from "react";
+import { CustomConnectButton } from "../CustomConnectButton";
 const Header: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
           </Link>
         </nav>
         <div className={styles.buttonWrapper}>
-          <Button>Connect</Button>
+          <CustomConnectButton />
           {isMenuOpen ? (
             <button onClick={toggleMenu}>
               <CloseIcon />
