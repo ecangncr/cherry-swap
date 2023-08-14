@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import "@rainbow-me/rainbowkit/styles.css";
+import { Providers } from "./providers";
 const dmFontFamily = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,10 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={dmFontFamily.className}>
-      <body className="container">
-        <Header />
-        {children}
-        <Footer />
+      <body>
+        <Providers>
+          <main className="container">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </Providers>
       </body>
     </html>
   );

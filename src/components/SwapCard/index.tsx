@@ -1,4 +1,7 @@
+"use client";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import Button from "../Button";
+import ConnectChecker from "../ConnectChecker";
 import ArrowDownIcon from "../Icons/ArrowDown";
 import CHR_TOKEN_ICON from "../Icons/CHR_TOKEN";
 import DropdownIcon from "../Icons/Dropdown";
@@ -9,6 +12,7 @@ import styles from "./styles.module.scss";
 type Props = React.HTMLAttributes<HTMLDivElement>;
 
 const SwapCard: React.FC<Props> = ({ ...props }) => {
+  const { openConnectModal } = useConnectModal();
   return (
     <div className={styles.swapCard} {...props}>
       <div className={styles.head}>
@@ -43,7 +47,14 @@ const SwapCard: React.FC<Props> = ({ ...props }) => {
           </div>
         </div>
       </div>
-      <Button className={styles.swapButton}>Connect a wallet</Button>
+      <ConnectChecker
+        disconnectedComponent={
+          <Button className={styles.swapButton} onClick={openConnectModal}>
+            Connect a wallet
+          </Button>
+        }
+        connectedComponent={<Button className={styles.swapButton}>Swap</Button>}
+      />
     </div>
   );
 };
